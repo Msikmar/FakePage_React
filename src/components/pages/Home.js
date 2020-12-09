@@ -17,7 +17,7 @@ export const Home = () => {
     return () => {
        alert("You are now leaving the home page")
     }
-  }, [])
+  }, [jumbotronH1])
 
     return (
         <div>
