@@ -1,15 +1,29 @@
-import React from "react"
+import React, {useEffect, useState } from "react"
 import Jumbotron from "../../components/layout/Jumbotron"
 import Background from "../../assets/images/Jumbotron_2.jpg";
 import Card from 'react-bootstrap/Card'
 import CardGroup from 'react-bootstrap/CardGroup'
 
 export const Home = () => {
+
+  const [jumbotronP, setJumbotronP] = useState("“Be yourself; everyone else is already taken.”");
+  const [jumbotronH1, setJumbotronH1] = useState("Welcome to FakePage")
+
+  useEffect(() => { 
+      setTimeout(() => {
+        setJumbotronH1("FakePage the place to be")
+        setJumbotronP("“Better to remain silent and be thought a fool than to speak out and remove all doubt.”")
+      }, 10000)
+    return () => {
+       alert("You are now leaving the home page")
+    }
+  }, [])
+
     return (
         <div>
             <Jumbotron 
-            h1={"Welcome to FakePage"}
-            p={"“Better to remain silent and be thought a fool than to speak out and remove all doubt.”"}
+            h1={jumbotronH1}
+            p ={jumbotronP}
             background={Background}
             />
             <div className="container home">
